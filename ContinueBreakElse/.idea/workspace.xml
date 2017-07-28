@@ -15,6 +15,8 @@
       <file leaf-file-name="ContinueBreakElse.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ContinueBreakElse.py">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -254,6 +256,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ContinueBreakElse.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
           <folding />
         </state>
       </provider>
