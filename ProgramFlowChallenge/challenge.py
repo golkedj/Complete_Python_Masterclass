@@ -38,7 +38,7 @@
 #     else:
 #         length += 1
 #
-# if segments == 0 and length > 0:
+# if segments == 0:
 #     segments = 1
 #
 # print("The length of the segment was {} digits".format(length))
@@ -46,11 +46,15 @@
 
 # Instructor solution
 
-ip_address = input("Please enter an IP address: ")
+input_prompt = ("Please enter an IP address. An IP address consists of 4 numbers, "
+                "separated from each other with a full stop: ")
+ip_address = input(input_prompt)
+if ip_address[-1] != '.':
+    ip_address += '.'
 
 segment = 1
 segment_length = 0
-character = ''
+# character = ''
 
 for character in ip_address:
     if character == '.':
@@ -63,5 +67,5 @@ for character in ip_address:
 #     print("segment {} contains {} characters".format(segment, segment_length))
 
 # unless the final character in the string was a . then we haven't printed the last segment
-if character != '.':
-    print("segment {} contains {} characters".format(segment, segment_length))
+# if character != '.':
+#     print("segment {} contains {} characters".format(segment, segment_length))
