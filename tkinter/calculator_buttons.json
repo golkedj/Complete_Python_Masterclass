@@ -1,50 +1,138 @@
 [
     {
         "text": "C",
-        "row": 1,
+        "row": 0,
         "column": 0,
         "rowspan": 1, 
         "columnspan": 1,
-        "sticky": "nw"
+        "sticky": "ew"
     },
     {
         "text": "CE",
+        "row": 0,
+        "column": 1,
+        "rowspan": 1, 
+        "columnspan": 1,
+        "sticky": "ew"
+    },
+    {
+        "text": "7",
+        "row": 1,
+        "column": 0,
+        "rowspan": 1, 
+        "columnspan": 1,
+        "sticky": "ew"
+    },
+    {
+        "text": "8",
         "row": 1,
         "column": 1,
         "rowspan": 1, 
         "columnspan": 1,
-        "sticky": "nw"
+        "sticky": "ew"
     },
     {
-        "text": "7",
+        "text": "9",
+        "row": 1,
+        "column": 2,
+        "rowspan": 1, 
+        "columnspan": 1,
+        "sticky": "ew"
+    },
+    {
+        "text": "+",
+        "row": 1,
+        "column": 3,
+        "rowspan": 1, 
+        "columnspan": 1,
+        "sticky": "ew"
+    },
+    {
+        "text": "4",
         "row": 2,
         "column": 0,
         "rowspan": 1, 
         "columnspan": 1,
-        "sticky": "nw"
+        "sticky": "ew"
     },
     {
-        "text": "8",
+        "text": "5",
         "row": 2,
         "column": 1,
         "rowspan": 1, 
         "columnspan": 1,
-        "sticky": "nw"
+        "sticky": "ew"
     },
     {
-        "text": "9",
+        "text": "6",
         "row": 2,
         "column": 2,
         "rowspan": 1, 
         "columnspan": 1,
-        "sticky": "nw"
+        "sticky": "ew"
     },
     {
-        "text": "+",
+        "text": "-",
         "row": 2,
         "column": 3,
         "rowspan": 1, 
         "columnspan": 1,
-        "sticky": "nw"
+        "sticky": "ew"
+    },
+    {
+        "text": "1",
+        "row": 3,
+        "column": 0,
+        "rowspan": 1, 
+        "columnspan": 1,
+        "sticky": "ew"
+    },
+    {
+        "text": "2",
+        "row": 3,
+        "column": 1,
+        "rowspan": 1, 
+        "columnspan": 1,
+        "sticky": "ew"
+    },
+    {
+        "text": "3",
+        "row": 3,
+        "column": 2,
+        "rowspan": 1, 
+        "columnspan": 1,
+        "sticky": "ew"
+    },
+    {
+        "text": "*",
+        "row": 3,
+        "column": 3,
+        "rowspan": 1, 
+        "columnspan": 1,
+        "sticky": "ew"
+    },
+    {
+        "text": "0",
+        "row": 4,
+        "column": 0,
+        "rowspan": 1, 
+        "columnspan": 1,
+        "sticky": "ew"
+    },
+    {
+        "text": "=",
+        "row": 4,
+        "column": 1,
+        "rowspan": 1, 
+        "columnspan": 2,
+        "sticky": "ew"
+    },
+    {
+        "text": "/",
+        "row": 4,
+        "column": 3,
+        "rowspan": 1, 
+        "columnspan": 1,
+        "sticky": "ew"
     }
 ]

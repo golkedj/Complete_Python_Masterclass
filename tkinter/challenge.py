@@ -22,49 +22,80 @@
 # The height will still need to be constrained, though.
 
 # My Solution
+# try:
+#     import tkinter
+# except ImportError:  # python 2
+#     import Tkinter as tkinter
+
+# import json
+
+# main_window = tkinter.Tk()
+
+# main_window.title('Calculator')
+# main_window.geometry('640x480+400+200')
+# main_window_padding = 8
+# main_window['padx'] = main_window_padding
+
+# result = tkinter.Entry(main_window)
+# result.grid(row=0, column=0, sticky='nsew')
+
+# keypad = tkinter.Frame(main_window)
+# keypad.grid(row=1, column=0, sticky='nsew')
+# with open('calculator_buttons.json') as buttons_file:
+#     button_configurations = json.load(buttons_file)
+# for button_configuration in button_configurations:
+#     button = tkinter.Button(keypad, text=button_configuration['text'])
+#     button.grid(
+#         row=button_configuration['row'],
+#         column=button_configuration['column'],
+#         rowspan=button_configuration['rowspan'],
+#         columnspan=button_configuration['columnspan'],
+#         sticky=button_configuration['sticky']
+#     )
+
+# main_window.update()
+# total_width = main_window_padding + keypad.winfo_width()
+# total_height = result.winfo_height() + keypad.winfo_height()
+# main_window.minsize(total_width, total_height)
+# main_window.maxsize(total_width, total_height)
+
+# main_window.mainloop()
+
+# Professor Solution
 try:
     import tkinter
-except ImportError:  # python 2
+except ImportError:
     import Tkinter as tkinter
 
-import os
-import json
+keys = [[('C', 1), ('CE', 1)],
+        [('7', 1), ('8', 1), ('9', 1), ('+', 1)],
+        [('4', 1), ('5', 1), ('6', 1), ('-', 1)],
+        [('1', 1), ('2', 1), ('3', 1), ('*', 1)],
+        [('0', 1), ('=', 2), ('/', 1)],
+        ]
 
-main_window = tkinter.Tk()
+mainWindowPadding = 8
+mainWindow = tkinter.Tk()
+mainWindow.title("Calculator")
+mainWindow.geometry('640x480-8-200')
+mainWindow['padx'] = mainWindowPadding
 
-main_window.title('Calculator')
-main_window.geometry('640x480+400+200')
-main_window['padx'] = 8
+result = tkinter.Entry(mainWindow)
+result.grid(row=0, column=0, sticky='nsew')
 
-main_window.columnconfigure(0, weight=100)
-main_window.columnconfigure(1, weight=90)
-main_window.rowconfigure(0, weight=100)
-main_window.rowconfigure(1, weight=90)
+keyPad = tkinter.Frame(mainWindow)
+keyPad.grid(row=1, column=0, sticky='nsew')
 
-result_frame = tkinter.LabelFrame(main_window)
-result_frame.grid(row=0, column=0)
-result = tkinter.Entry(result_frame)
-result.grid(row=0, column=0, columnspan=4, sticky='new')
+row = 0
+for keyRow in keys:
+    col = 0
+    for key in keyRow:
+        tkinter.Button(keyPad, text=key[0]).grid(row=row, column=col, columnspan=key[1], sticky=tkinter.E + tkinter.W)
+        col += key[1]
+    row += 1
 
-keypad_frame = tkinter.Frame(main_window)
-keypad_frame.grid(row=1, column=0)
-with open('calculator_buttons.json') as buttons_file:
-    button_configurations = json.load(buttons_file)
-for button_configuration in button_configurations:
-    button = tkinter.Button(keypad_frame, text=button_configuration['text'])
-    button.grid(
-        row=button_configuration['row'],
-        column=button_configuration['column'],
-        rowspan=button_configuration['rowspan'],
-        columnspan=button_configuration['columnspan'],
-        sticky=button_configuration['sticky']
-    )
-# buttons = [
-#     {
+mainWindow.update()
+mainWindow.minsize(keyPad.winfo_width() + mainWindowPadding, result.winfo_height() + keyPad.winfo_height())
+mainWindow.maxsize(keyPad.winfo_width() + 50 + mainWindowPadding, result.winfo_height() + 50 + keyPad.winfo_height())
 
-#     }
-# ]
-# tkinter.Button(main_window, text='C')
-# buttons[0].grid(row=1, column=0, sticky='nw')
-
-main_window.mainloop()
+mainWindow.mainloop()
