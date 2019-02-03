@@ -172,6 +172,12 @@ shuffle()
 dealer_hand = []
 player_hand = []
 
-start_game()
 
-mainWindow.mainloop()
+def play():
+    start_game()
+
+    mainWindow.mainloop()
+
+
+if __name__ == "__main__":
+    play()
