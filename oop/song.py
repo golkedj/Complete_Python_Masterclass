@@ -36,7 +36,7 @@ class Album:
     Methods:
     add_song: Used to add a new song to the album's track list.
     """
-
+    
     def __init__(self, name, year, artist=None):
         self.name = name
         self.year = year
@@ -147,8 +147,6 @@ def create_checkfile(artist_list):
                 for new_song in new_album.tracks:
                     print("{0.name}\t{1.name}\t{1.year}\t{2.title}".format(new_artist, new_album, new_song),
                         file=checkfile)
-
-
 
 
 if __name__ == '__main__':

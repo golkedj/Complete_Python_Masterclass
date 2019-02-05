@@ -2,7 +2,7 @@ class Kettle(object):
 
     power_source = "electricity"
 
-    def __init__(self, make, price):
+    def __init__(self, make, price): 
         self.make = make
         self.price = price
         self.on = False
