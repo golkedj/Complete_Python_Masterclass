@@ -27,3 +27,6 @@ print(dave)
 
 dave.level = 3
 print(dave)
+
+dave.score = 500
+print(dave)
