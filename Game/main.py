@@ -1,17 +1,29 @@
 from player import Player
 
-david = Player("David")
+dave = Player("David")
 
-print(david.name)
-print(david.lives)
-david.lives -= 1
-print(david)
+print(dave.name)
+print(dave.lives)
+dave.lives -= 1
+print(dave)
 
-david.lives -= 1
-print(david)
+dave.lives -= 1
+print(dave)
 
-david.lives -= 1
-print(david)
+dave.lives -= 1
+print(dave)
 
-david.lives -= 1
-print(david)
+dave.lives -= 1
+print(dave)
+
+dave._lives = 9
+print(dave)
+
+dave.level = 2
+print(dave)
+
+dave.level += 5
+print(dave)
+
+dave.level = 3
+print(dave)
