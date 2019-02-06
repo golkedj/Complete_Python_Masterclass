@@ -19,4 +19,10 @@ class Enemy(object):
 
 
 class Troll(Enemy):
-    pass
+    
+    def __init__(self, name):
+        # super(Troll, self).__init__(name=name, lives=1, hit_points=23)
+        super().__init__(name=name, lives=1, hit_points=23)
+
+    def grunt(self):
+        print("Me {0.name}. {0.name} stomp you".format(self))
