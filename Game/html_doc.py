@@ -21,8 +21,17 @@ class DocType(Tag):
 
 class Head(Tag):
 
-    def __init__(self):
+    def __init__(self, title_text=None):
         super().__init__('head', '')
+        self._title_tag = None
+        if title_text:
+            self._title_tag = Tag('title', title_text)
+
+    def __str__(self):
+        if not self._title_tag:
+            return "{}{}".format(self.start_tag, self.end_tag)
+        
+        return "{}\n\t{}\n{}".format(self.start_tag, self._title_tag, self.end_tag)
 
 
 class Body(Tag):
@@ -44,9 +53,9 @@ class Body(Tag):
 
 class HtmlDoc(object):
 
-    def __init__(self):
+    def __init__(self, title_text=None):
         self._doc_type = DocType()
-        self._head = Head()
+        self._head = Head(title_text=title_text)
         self._body = Body()
 
     def add_tag(self, name, contents):
@@ -54,15 +63,17 @@ class HtmlDoc(object):
 
     def display(self, file=None):
         self._doc_type.display(file=file)
-        print('<html>', file=file)
+        print('<html>\n', file=file)
         self._head.display(file=file)
+        print('', file=file)
         self._body.display(file=file)
         print('</html>', file=file)
 
 
 if __name__ == '__main__':
-    my_page = HtmlDoc()
+    my_page = HtmlDoc(title_text='Document Title')
     my_page.add_tag('h1', 'Main heading')
     my_page.add_tag('h2', 'sub-heading')
     my_page.add_tag('p', 'This is a paragraph that will appear on the page')
-    my_page.display()
+    with open('test.html', 'w') as test_doc:
+        my_page.display(test_doc)
