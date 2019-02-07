@@ -42,7 +42,6 @@ class Penguin(object):
         print("Are you 'avin' a larf? I'm a penguin!")
 
 
-
 # def test_duck(duck):
 #     duck.walk()
 #     duck.swim()
