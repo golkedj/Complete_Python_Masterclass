@@ -42,15 +42,18 @@ class Penguin(object):
         print("Are you 'avin' a larf? I'm a penguin!")
 
 
-# def test_duck(duck):
-#     duck.walk()
-#     duck.swim()
-#     duck.quack()
+class Flock(object):
+
+    def __init__(self):
+        self.flock = []
+
+    def add_duck(self, duck: Duck) -> None:
+        self.flock.append(duck)
+
+    def migrate(self):
+        for duck in self.flock:
+            duck.fly()
 
 if __name__ == '__main__':
     donald = Duck()
     donald.fly()
-
-    # percy = Penguin()
-    # test_duck(percy)
-    
