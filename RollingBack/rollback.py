@@ -2,7 +2,7 @@ import sqlite3
 
 db = sqlite3.connect("Accounts.sqlite")
 db.execute("CREATE TABLE IF NOT EXISTS accounts (name TEXT PRIMARY KEY NOT NULL, balance INTEGER NOT NULL)")
-db.execute("CREATE TABLE IF NOT EXISTS transations (time TIMESTAMP NOT NULL,"
+db.execute("CREATE TABLE IF NOT EXISTS history (time TIMESTAMP NOT NULL,"
            " account TEXT NOT NULL, amount INTEGER NOT NULL, PRIMARY KEY (time, account))")
 
 
@@ -50,8 +50,10 @@ if __name__ == '__main__':
     john.withdraw(0)
     john.show_balance()
 
-    terry = Account("Terry")
+    terry = Account("TerryJ")
     graham = Account("Graham", 9000)
     eric = Account("Eric", 7000)
+    michael = Account("Michael")
+    terryG = Account("TerryG")
     
     db.close()
