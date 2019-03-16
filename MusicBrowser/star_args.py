@@ -11,10 +11,7 @@ print(number_tuple)
 
 
 def average_word_length(*args):
-    sum = 0
-    for arg in args:
-        print("len(arg): {}".format(len(arg)))
-        sum += len(arg)
+    sum = len(''.join(args))
 
     return sum // len(args)
 
