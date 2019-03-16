@@ -30,12 +30,20 @@ artistList = tkinter.Listbox(mainWindow)
 artistList.grid(row=1, column=0, sticky='nsew', rowspan=2, padx=(30, 0))
 artistList.config(border=2, relief='sunken')
 
-# ===== Artists Listbox =====
+artistScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=artistList.yview)
+artistScroll.grid(row=1, column=0, sticky='nse', rowspan=2)
+artistList['yscrollcommand'] = artistScroll.set
+
+# ===== Albums Listbox =====
 albumLV = tkinter.Variable(mainWindow)
 albumLV.set(("Choose an artist",))
 albumList = tkinter.Listbox(mainWindow, listvariable=albumLV)
 albumList.grid(row=1, column=1, sticky='nsew', padx=(30, 0))
 albumList.config(border=2, relief='sunken')
+
+albumScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=albumList.yview)
+albumScroll.grid(row=1, column=1, sticky='nse', rowspan=1)
+albumList['yscrollcommand'] = albumScroll.set
 
 # ===== Songs Listbox =====
 songLV = tkinter.Variable(mainWindow)
@@ -45,6 +53,8 @@ songList.grid(row=1, column=2, sticky='nsew', padx=(30, 0))
 songList.config(border=2, relief='sunken')
 
 # ===== Main Loop =====
+testList = range(0, 100)
+albumLV.set(tuple(testList))
 mainWindow.mainloop()
 print("closing database connection")
 conn.close()
