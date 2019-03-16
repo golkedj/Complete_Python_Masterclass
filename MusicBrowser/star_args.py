@@ -21,6 +21,7 @@ def average_word_length(*args):
 average = average_word_length("hello", "planet", "earth", "take", "me", "to", "your", "leader")
 print("Average word length: {}".format(average))
 
+
 def get_smallest_and_largest_words(*args):
     smallest_length = 0
     largest_length = 0
@@ -42,6 +43,7 @@ def get_smallest_and_largest_words(*args):
 smallest, largest = get_smallest_and_largest_words("hello", "planet", "earth", "take", "me", "to", "your", "leader")
 print("Smallest word: ", smallest)
 print("Largest word: ", largest)
+
 
 def print_words_in_reverse_and_backwards(*args):
     reversed_words = args[::-1]
